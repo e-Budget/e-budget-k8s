@@ -1,2 +1,5 @@
 appName: e-budget
 numReplicas: 2
+
+docker:
+  image: leojgpereira/e-budget-be
