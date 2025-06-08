@@ -19,7 +19,33 @@ spec:
     spec:
       containers:
         - name: {{ .Values.appName }}-container
-          image: {{ .Values.docker.image }}
+          image: {{ .Values.containerImage }}
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          env:
+            - name: E_BUDGET_DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.appName }}-secret
+                  key: E_BUDGET_DB_USERNAME
+            - name: E_BUDGET_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.appName }}-secret
+                  key: E_BUDGET_DB_PASSWORD
+            - name: E_BUDGET_DB_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.appName }}-configMap
+                  key: E_BUDGET_DB_HOSTNAME
+            - name: E_BUDGET_DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.appName }}-configMap
+                  key: E_BUDGET_DB_PORT
+            - name: E_BUDGET_DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.appName }}-configMap
+                  key: E_BUDGET_DB_NAME
