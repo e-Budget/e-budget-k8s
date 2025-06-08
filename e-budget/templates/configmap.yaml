@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Values.appName }}-configMap
+  name: {{ .Values.appName }}-configmap
 data:
   E_BUDGET_DB_HOSTNAME: "localhost"
   E_BUDGET_DB_PORT: "5432"

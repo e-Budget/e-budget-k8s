@@ -37,15 +37,15 @@ spec:
             - name: E_BUDGET_DB_HOSTNAME
               valueFrom:
                 configMapKeyRef:
-                  name: {{ .Values.appName }}-configMap
+                  name: {{ .Values.appName }}-configmap
                   key: E_BUDGET_DB_HOSTNAME
             - name: E_BUDGET_DB_PORT
               valueFrom:
                 configMapKeyRef:
-                  name: {{ .Values.appName }}-configMap
+                  name: {{ .Values.appName }}-configmap
                   key: E_BUDGET_DB_PORT
             - name: E_BUDGET_DB_NAME
               valueFrom:
                 configMapKeyRef:
-                  name: {{ .Values.appName }}-configMap
+                  name: {{ .Values.appName }}-configmap
                   key: E_BUDGET_DB_NAME
