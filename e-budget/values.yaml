@@ -1,4 +1,7 @@
 appName: e-budget
 numReplicas: 1
-
 containerImage: leojgpereira/e-budget-be
+database:
+  hostname: localhost
+  port: 5432
+  name: ebudget
