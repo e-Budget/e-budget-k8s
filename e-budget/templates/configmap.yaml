@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.appName }}-configmap
 data:
-  E_BUDGET_DB_HOSTNAME: "localhost"
-  E_BUDGET_DB_PORT: "5432"
-  E_BUDGET_DB_NAME: "ebudget"
+  E_BUDGET_DB_HOSTNAME: "{{ .Values.database.hostname }}"
+  E_BUDGET_DB_PORT: "{{ .Values.database.port }}"
+  E_BUDGET_DB_NAME: "{{ .Values.database.name }}"
